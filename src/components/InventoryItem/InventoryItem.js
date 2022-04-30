@@ -8,6 +8,11 @@ const InventoryItem = () => {
         .then(res => res.json())
         .then(data=> setGymData(data));
     }, [])
+
+const InventoryDisplay = () =>{
+
+}
+
     return (
        
     <>
@@ -25,6 +30,7 @@ const InventoryItem = () => {
                                 <h4>Price: ${item.price}</h4>
                                 <h4>Quantity: {item.quantity}Ps</h4>
                                 <h5>Supplaier Name:{item.supplierName}</h5>
+                                <button  className='btn'>Stock Update</button>
                             </div>
                         )
                 }

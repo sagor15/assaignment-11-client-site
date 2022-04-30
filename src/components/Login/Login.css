@@ -1,0 +1,157 @@
+.loginContainer {
+    margin: 0 auto;
+    width: 500px;
+    height: 600px;
+    box-shadow: 3px 3px 5px 6px #ccc;
+    border-radius: 10px;
+    background-color: white;
+}
+.loginForm{
+    padding-top: 50px;
+}
+
+.loginContainer label {
+    margin-bottom: 17px;
+    font-size: 22px;
+}
+.login-container{
+    background-color: black;
+}
+
+.loginContainer input {
+    background-color: #ffffff;
+    box-shadow: 3px 3px 5px 6px #aca5a5;
+    width: 300px;
+    height: 35px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+}
+.loginContainer1{
+    width: 60%;
+    margin: 0 auto;
+}
+.btn1 {
+    background-color: #f72907;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 22px;
+    border-radius: 17px;
+    border: none;
+    color: white;
+}
+.loginBtnContainer{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.accountOrNot {
+    width: 266px;
+    margin: 0 auto;
+    margin-top: 25px;
+    font-size: 18px;
+}
+.accountOrNot button {
+    color: #7678f0;
+    font-weight: bold;
+    text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgb(255 255 255 / 30%);
+    border: none;
+    border-radius: 10px;
+}
+.OrSection{
+    width: 50%;
+    margin: 0 auto;
+}
+.OrSection p {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+    color: #7678f0;
+    text-shadow: 2px 7px 5px rgb(0 0 0 / 30%), 0px -4px 10px rgb(255 255 255 / 30%);
+    font-weight: bold;
+}
+.google img{
+    width: 20px;
+    display: inline;
+}
+.google{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    
+}
+
+@media screen and (max-width:600px){
+    .loginContainer {
+        display: inline;
+        margin: 0 auto;
+        width: 200px;
+        height: auto;
+        box-shadow: 3px 3px 5px 6px #ccc;
+        margin-top: 40px;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+    .loginContainer1{
+        width: 70%;
+        margin: 0 auto;
+    }
+    .loginBtnContainer{
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    .btn1 {
+        background-color: red;
+        width: 80%;
+        margin: 0px 18px;
+        font-size: 22px;
+        border-radius: 17px;
+        color: white;
+        border: none;
+    
+    }
+    .loginContainer input {
+        margin: 0 auto;
+        width: 234px; 
+        box-shadow: 3px 3px 5px 6px #ccc;
+        border-radius: 10px;
+        background-color: white;
+        border: none;
+    }
+    .accountOrNot {
+        width: 304px;
+        margin: 0 auto;
+        margin-top: 25px;
+        font-size: 18px;
+    }
+    .loginForm{
+        padding-top: 50px;
+    }
+    .accountOrNot button {
+        color: #7678f0;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        padding: 4px 27px;
+        text-shadow: 2px 7px 5px rgb(0 0 0 / 30%), 0px -4px 10px rgb(255 255 255 / 30%);
+    }
+    .google {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        cursor: pointer;
+        width: 200px;
+        margin-left: -27px;
+    }
+    .OrSection p {
+        text-align: center;
+        font-size: 21px;
+        margin-top: 20px;
+        font-weight: normal;
+        /* width: 200px; */
+    }
+}

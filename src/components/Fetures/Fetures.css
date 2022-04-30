@@ -1,0 +1,20 @@
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top:118px;
+    justify-content: center;
+    grid-gap: 33px;
+}
+.image img{
+    border-radius: 20px;
+}
+.heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    /* position: relative; */
+    margin-top: 118px;
+    color: red;
+  }
+  /* .icon{
+      background-color: white;
+  } */

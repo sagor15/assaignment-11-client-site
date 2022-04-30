@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import About from '../About/About';
 import Banner from '../Banner/Banner';
+import Fetures from '../Fetures/Fetures';
 import "./Home.css";
 
 const Home = () => {
@@ -26,12 +28,15 @@ const Home = () => {
                             <h4>Price: ${item.price}</h4>
                             <h4>Quantity: {item.quantity}Ps</h4>
                             <h5>Supplaier Name:{item.supplierName}</h5>
+                            <button className='btn'>Stock Update</button>
                         </div>
                     )
             }
             </div>
             </div>
             </div>
+            <About></About>
+            <Fetures></Fetures>
         </div>
     );
 };

@@ -3,3 +3,9 @@
     background-color: #060505f1;
     margin-top: 0px;
 }
+.btn{
+    border: none;
+    background-color: red;
+    color: white;
+    font-size: 19px;
+}

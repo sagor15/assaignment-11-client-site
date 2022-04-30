@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Navber.css";
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Navber = () => {
     return (
@@ -12,8 +13,10 @@ const Navber = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="/inventoryitem">Home</Nav.Link>
+                            <Nav.Link href="/home">Home</Nav.Link>
+                            <Nav.Link href="/inventoryitem">Inventory</Nav.Link>
                             <Nav.Link href=""></Nav.Link>
+                            
                              {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown"> */}
                                
                                 <NavDropdown.Divider />
@@ -22,8 +25,8 @@ const Navber = () => {
                         </Nav>
                         <Nav>
                             <Nav.Link href="#deets"> </Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
-                                
+                            <Nav.Link eventKey={2} href="/login">
+                                Login
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
