@@ -18,3 +18,14 @@
   /* .icon{
       background-color: white;
   } */
+
+
+  @media screen and (max-width:600px){
+    .box-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin-top:118px;
+        justify-content: center;
+        grid-gap: 33px;
+    }
+  }
