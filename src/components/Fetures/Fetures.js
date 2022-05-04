@@ -5,7 +5,7 @@ const Fetures = () => {
     return (
         <div className='container'>
             
-            <h1 class="heading"> <span>Health for gym</span> </h1>
+            <h1 class="heading"> <span>Good for Health </span> </h1>
             <div class="box-container">
 
                 <div class="box">
