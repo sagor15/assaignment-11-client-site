@@ -1,0 +1,15 @@
+.form{
+    margin: 0 auto;
+    /* width: 343px; */
+    background: white;
+    height: 565px;
+}
+.productName{
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+}
+.addBtn{
+    text-align: center;
+    padding-top: 30px;
+}

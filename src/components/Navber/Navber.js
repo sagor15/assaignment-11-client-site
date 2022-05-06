@@ -1,10 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Navber.css";
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import app from '../../firebase.init';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
+const auth = getAuth(app);
 
 const Navber = () => {
+    const [user , setUser] = useState({});
+
+  useEffect(()=>{
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+          
+        //   const uid = user?.uid;
+        setUser(user);
+         
+        } else {
+          setUser({});
+        }
+      });
+  },[])
+
+  const handleSignOut = () =>{
+    signOut(auth).then(() => {
+        toast('Sign out successfull')
+      }).catch((error) => {
+        // An error happened.
+        console.log(error.messege);
+      });
+}
+
     return (
         <div className='shado'>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
@@ -25,13 +57,16 @@ const Navber = () => {
                         </Nav>
                         <Nav>
                             <Nav.Link href="#deets"> </Nav.Link>
-                            <Nav.Link eventKey={2} href="/login">
-                                Login
-                            </Nav.Link>
+                            {
+                                user?.uid? <Nav.Link onClick={handleSignOut} eventKey={2} as={Link} to="/login"> Sign Out </Nav.Link>:<Nav.Link eventKey={2} as={Link} to="/login"> Login </Nav.Link>
+                                
+                          
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+            <ToastContainer />
         </div>
     );
 };
