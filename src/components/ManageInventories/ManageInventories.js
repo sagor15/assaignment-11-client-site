@@ -12,6 +12,21 @@ const ManageInventories = () => {
   }, [])
 
 
+  const handlDelete = (id) =>{
+    console.log(id);
+    const proccedd = window.confirm('Are You Sure ? ');
+    if(proccedd){
+      const url = `https://protected-headland-35009.herokuapp.com/service/${id}`;
+      fetch(url,{
+        method:"DELETE",
+      })
+      .then(res=>res.json())
+      .then(data=>{
+        console.log(data);
+      })
+    }
+  }
+
   const navigate = useNavigate();
   const handleAddItem = () =>{
     navigate('/additem')
@@ -34,6 +49,7 @@ const ManageInventories = () => {
                       <img className='manageImg' src={item.picture} alt='' />
                       {/* <div> */}
                         <h3 >{item.name}</h3>
+                        <h3>{item._id}</h3>
                       {/* </div> */}
                       {/* <div> */}
                         <h4>Price: ${item.price}</h4>
@@ -42,7 +58,7 @@ const ManageInventories = () => {
                         <h4>Quantity: {item.quantity}Ps</h4>
                       {/* </div> */}
                       <button onClick={handleAddItem} className='btn'>Add Item</button>
-                      <button  className='btn'>Delete</button>
+                      <button onClick={()=>handlDelete(item._id)} className='btn'>Delete</button>
                     </div>
 
                     

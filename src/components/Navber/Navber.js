@@ -64,9 +64,7 @@ const Navber = () => {
                            {
                                user?.uid?<Nav.Link as={Link} to="/additem">Add item</Nav.Link>: " "
                            }
-                           {
-                               user?.uid? <Nav.Link as={Link} to="/myitem">My Item</Nav.Link>: " "
-                           }
+                          
                             {
                                 user?.uid? <Nav.Link onClick={handleSignOut} eventKey={2} as={Link} to="/login"> <span className='text-danger'>Sign Out</span> </Nav.Link>:<Nav.Link eventKey={2} as={Link} to="/login"> Login </Nav.Link>
                                 
