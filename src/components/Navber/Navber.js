@@ -41,13 +41,19 @@ const Navber = () => {
         <div className='shado'>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
                 <Container>
-                    <Navbar.Brand href='/' className='textShadow' > <span className='text-danger fs-5'> GYM</span> Equipment</Navbar.Brand>
+                    <Navbar.Brand as={Link} to='/' className='textShadow' > <span className='text-danger fs-5'> GYM</span> Equipment</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="/home">Home</Nav.Link>
-                            <Nav.Link href="/inventoryitem">Inventory</Nav.Link>
-                            <Nav.Link href=""></Nav.Link>
+                            <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                            <Nav.Link as={Link} to="/inventoryitem">Inventory</Nav.Link>
+                           {
+                               user?.uid ?  <Nav.Link as={Link} to="/manageinventories">Manage Inventories</Nav.Link>:" "
+                               
+                           }
+                           {
+                               user?.uid?<Nav.Link as={Link} to="/additem">add item</Nav.Link>: " "
+                           }
                             
                              {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown"> */}
                                

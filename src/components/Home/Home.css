@@ -15,6 +15,12 @@
     border-radius: 10px;
 
 }
+.manage{
+    margin: 0 auto;
+    display: block;
+    margin-top: 69px;
+}
+
 .gym-container img{
     width: 300px;
     height: 300px;

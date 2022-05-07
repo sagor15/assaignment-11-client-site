@@ -34,6 +34,17 @@ const AddItem = () => {
                     className=""
                   />
                 </div>
+                <div className="productName">
+                  <label className="text-black">
+                    Quantity
+                  </label>
+                  <input
+                    type="text"
+                    name="price"
+                    placeholder="price"
+                    className=""
+                  />
+                </div>
       
                 <div className="productName">
                   <label

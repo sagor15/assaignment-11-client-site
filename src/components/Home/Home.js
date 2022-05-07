@@ -12,7 +12,7 @@ const Home = () => {
     // const {_id} = gymData();
     // console.log(_id);
     useEffect(() => {
-        fetch("http://localhost:5000/service")
+        fetch("https://protected-headland-35009.herokuapp.com/service")
             .then(res => res.json())
             .then(data => setGymData(data));
     }, []);
@@ -33,7 +33,7 @@ const Home = () => {
             <div className='gym-firstContainer'>
             {
                 gymData.slice(0, 6).map((item) =>       
-                
+                        <div>
                         <div className='gym-container'>
                             <img src={item.picture} alt='' />
                             <h2>{item.name}</h2>
@@ -43,10 +43,19 @@ const Home = () => {
                             <h5>Supplaier Name:{item.supplierName}</h5>
                             <button onClick={() => updateDetails(item._id)} className='btn'>Stock Update</button>
                         </div>
+                        
+                        </div>
                     )
             }
+          
             </div>
             </div>
+            </div>
+
+
+            <div>
+            <button className='btn manage'>Manage inventories</button>
+
             </div>
             <About></About>
             <Fetures></Fetures>

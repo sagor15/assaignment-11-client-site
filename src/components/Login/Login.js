@@ -107,10 +107,10 @@ const resetPassword = async() => {
 
                 </form>
                 <div className='accountOrNot'>
-                    <p>You have no account ? <button onClick={()=>handleSignUp()}>Sign Up</button></p>
+                    <p className='accountp '>You have no account ? <button onClick={()=>handleSignUp()}>Sign Up</button></p>
                 </div>
                 <div className='accountOrNot'>
-                    <p>Forget password ? <button onClick={resetPassword}>Reset</button></p>
+                    <p className='accountp '>Forget password ? <button onClick={resetPassword}>Reset</button></p>
                 </div>
                 <div className='OrSection'>
                     <p>Or</p>

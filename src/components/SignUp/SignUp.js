@@ -7,6 +7,7 @@ import app from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import Loading from '../Loading/Loading';
 import { toast } from 'react-toastify';
+import "./SignUp.css";
 
 
 
@@ -68,6 +69,10 @@ const SignUp = () => {
         signInWithPopup(auth, provider)
         .then((result) => {
           const user = result.user;
+          if(user){
+              navigate('/home');
+              toast("google signin successful");
+          }
           console.log(user);
         }).catch((error) => {
         console.log(error.code);
@@ -105,13 +110,13 @@ const SignUp = () => {
 
                 </form>
                 <div className='accountOrNot'>
-                    <p>You have  account ? <button onClick={()=> handleSignIn()} >Login</button></p>
+                    <p className='accountp '>You have  account ? <button onClick={()=> handleSignIn()} >Login</button></p>
                 </div>
                 <div className='accountOrNot'>
-                    <p>Forget password ? <button>Reset</button></p>
+                    <p className='accountp'>Forget password ? <button>Reset</button></p>
                 </div>
                 <div className='OrSection'>
-                    <p>Or</p>
+                    <p className='accountp text-white'>Or</p>
 
                     <div onClick={()=>handleGoogleSignin()} className='google'>
                         <p><img  alt="" /> SignIn with google</p>

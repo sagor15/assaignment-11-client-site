@@ -31,7 +31,7 @@
     height: 686px;
     box-shadow: 3px 3px 5px 6px #ccc;
     border-radius: 10px;
-    background-color: white;
+    /* background-color: white; */
 }
 .loginForm{
     padding-top: 50px;
@@ -123,6 +123,7 @@
         border-radius: 10px;
         box-sizing: border-box;
     }
+   
     .loginContainer1{
         width: 70%;
         margin: 0 auto;
@@ -131,6 +132,7 @@
         width: 50%;
         margin: 0 auto;
         margin-top: 20px;
+        /* background-color: white; */
     }
     .btn1 {
         background-color: red;
@@ -155,9 +157,11 @@
         margin: 0 auto;
         margin-top: 25px;
         font-size: 18px;
+        /* background-color: white; */
     }
     .loginForm{
         padding-top: 50px;
+       
     }
     .accountOrNot button {
         color: #7678f0;
@@ -182,6 +186,14 @@
         margin-top: 20px;
         font-weight: normal;
         /* width: 200px; */
+        color: white;
     }
+    .honeText {
+        color: white;
+    }
+    .accountp{
+        color: white;
+    }
+  
 }
 

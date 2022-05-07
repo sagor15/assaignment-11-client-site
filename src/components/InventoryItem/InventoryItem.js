@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import "./InventoryItem.css"
 
 const InventoryItem = () => {
-    
-    const [gymData , setGymData] = useState([]);
-    useEffect(()=>{
-        fetch("http://localhost:5000/service")
-        .then(res => res.json())
-        .then(data=> setGymData(data));
+
+    const [gymData, setGymData] = useState([]);
+    useEffect(() => {
+        fetch("https://protected-headland-35009.herokuapp.com/service")
+            .then(res => res.json())
+            .then(data => setGymData(data));
     }, [])
     // console.log(item)
 
@@ -44,6 +44,10 @@ const InventoryItem = () => {
 
 
                             }
+                        </div>
+                        <div>
+                            <button className='btn manage'>Manage inventories</button>
+
                         </div>
                     </div>
                 </div>

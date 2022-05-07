@@ -10,18 +10,20 @@ const UpdateDetails = () => {
     const [perIdDetails, setPerIdDetails] = useState({});
     const onSubmit = data => {
         console.log(data)
+        data.preventDeafult();
     };
-
+    let newQuantity;
     const handleDeliverdBtn = () =>{
-        const newQuantity = parseInt(perIdDetails.quantity) -1;
-        const makeQuantity = newQuantity;
-        console.log(makeQuantity);
-        fetch(`http://localhost:5000/service/${updateId}`,{
+         newQuantity = parseInt(perIdDetails.quantity) -1;
+        // const makeQuantity = newQuantity;
+        // console.log(makeQuantity);
+        const url = `https://protected-headland-35009.herokuapp.com/service/${updateId}`;
+        fetch(url,{
             method : "PUT",
             headers:{
                 "content-type":"application/json",
             },
-            body: JSON.stringify({makeQuantity}),
+            body: JSON.stringify({quantity:newQuantity}),
             
         })
         .then(res => res.json())
@@ -33,13 +35,13 @@ const UpdateDetails = () => {
 
     
     useEffect(() => {
-        const url = `http://localhost:5000/service/${updateId}`;
+        const url = `https://protected-headland-35009.herokuapp.com/service/${updateId}`;
 
         fetch(url)
             .then(res => res.json()).then(data => setPerIdDetails(data));
 
 
-    }, [perIdDetails,updateId]);
+    }, [perIdDetails,updateId,newQuantity]);
 
    
 
@@ -59,7 +61,10 @@ const UpdateDetails = () => {
                 <input placeholder='update quantity' {...register("restock")} />
                 <input value="Restock" type="submit" />
             </form>
+            <div>
+            <button className='btn manage'>Manage inventories</button>
 
+            </div>
         </div>
     );
 };
