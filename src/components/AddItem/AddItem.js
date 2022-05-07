@@ -1,73 +1,42 @@
 import React from 'react';
 import "./AddItem.css";
-
+import { useForm } from "react-hook-form";
 const AddItem = () => {
 
-   
-   
 
 
-        return (
-            <div className="">
-            <div className="container">
-              <form className='form'>
-                <div className="productName">
-                  <label className="text-black">
-                    Product Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    className=""
-                  />
-                </div>
-      
-                <div className="productName">
-                  <label className="text-black">
-                    Price
-                  </label>
-                  <input
-                    type="text"
-                    name="price"
-                    placeholder="price"
-                    className=""
-                  />
-                </div>
-                <div className="productName">
-                  <label className="text-black">
-                    Quantity
-                  </label>
-                  <input
-                    type="text"
-                    name="price"
-                    placeholder="price"
-                    className=""
-                  />
-                </div>
-      
-                <div className="productName">
-                  <label
-                    className="text-black"
-                  >
-                    Image
-                  </label>
-                  <input
-                    type="text"
-                    name="image"
-                    placeholder="url"
-                    className=""
-                  />
-                </div>
-      
-                <div className="addBtn">
-                  <button className="">Add</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        );
-    };
+  const { register, handleSubmit } = useForm();
+  const onSubmit = data => {
+    console.log(data);
+    const url =`http://localhost:5000/product`;
+    fetch(url,{
+      method:'POST',
+      headers:{
+        'content-type':'application/json'
+      },
+      body:JSON.stringify(data)
+    })
+    .then(res=> res.json())
+    .then(result=>{
+      console.log(result);
+    })
+  };
+
+  return (
+    <div className='w-50 mx-auto mb-5'>
+      <h2 className='text-white text-center mb-5 mt-5'>Add Item</h2>
+      <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
+        <input className='mb-4' placeholder='Enter your Name'  {...register("name", { required: true, maxLength: 20 })} />
+        <textarea className='mb-4' placeholder='Description'{...register("description")}/>
+        <input className='mb-4' placeholder='Price'type="number" {...register("price")} />
+        <input className='mb-4' placeholder='Quantity'type="number" {...register("quantity")} />
+        <input className='mb-4' placeholder='Photo Url'type="text" {...register("picture")} />
+        <input type="submit" value="Add Item" />
+      </form>
+    </div>
+
+  );
+};
 
 
 export default AddItem;

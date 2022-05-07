@@ -6,7 +6,7 @@ const ManageInventories = () => {
 
   const [gymData, setGymData] = useState([]);
   useEffect(() => {
-    fetch("https://protected-headland-35009.herokuapp.com/service")
+    fetch("http://localhost:5000/service")
       .then(res => res.json())
       .then(data => setGymData(data));
   }, [])
