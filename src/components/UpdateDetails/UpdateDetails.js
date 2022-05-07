@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import "./UpdateDetails.css";
 
@@ -8,10 +8,37 @@ const UpdateDetails = () => {
     const { register, handleSubmit } = useForm();
     // const [updateQuantity , setUpdateQuantity] = useState({});
     const [perIdDetails, setPerIdDetails] = useState({});
-    const onSubmit = data => {
-        console.log(data)
-        data.preventDeafult();
+    const [addIdDetails , setAddIdDetails] = useState({});
+
+
+    // let addQuantity;
+    const handleRestock = e => {
+        console.log(e)
+        // e.preventDeafult();
+        e.preventDeafult();
+        const restock = e.target.restock.value;
+        console.log(restock);
+    //     addQuantity = parseInt(addIdDetails.quantity) + restock ;
+       
+    //    const url = `https://protected-headland-35009.herokuapp.com/service/${updateId}`;
+    //    fetch(url,{
+    //        method : "PUT",
+    //        headers:{
+    //            "content-type":"application/json",
+    //        },
+    //        body: JSON.stringify({quantity:addQuantity}),
+           
+    //    })
+    //    .then(res => res.json())
+    //    .then(data => setAddIdDetails(data));
+       
+    //    console.log(perIdDetails);
     };
+
+
+
+
+
     let newQuantity;
     const handleDeliverdBtn = () =>{
          newQuantity = parseInt(perIdDetails.quantity) -1;
@@ -31,7 +58,21 @@ const UpdateDetails = () => {
         
         console.log(perIdDetails);
     };
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
     useEffect(() => {
@@ -43,7 +84,10 @@ const UpdateDetails = () => {
 
     }, [perIdDetails,updateId,newQuantity]);
 
-   
+   const navigate = useNavigate();
+   const handleManagebtn = ()=>{
+       navigate('/manageinventories');
+   }
 
 
     return (
@@ -57,12 +101,12 @@ const UpdateDetails = () => {
             <h1>price :$ {perIdDetails.price}</h1>
             <button onClick={()=>handleDeliverdBtn()} className='btn'>Deliverd</button>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleRestock}>
                 <input placeholder='update quantity' {...register("restock")} />
-                <input value="Restock" type="submit" />
+                <input  value="Restock"  type="submit" />
             </form>
             <div>
-            <button className='btn manage'>Manage inventories</button>
+            <button onClick={()=>handleManagebtn()} className='btn manage'>Manage inventories</button>
 
             </div>
         </div>

@@ -15,6 +15,7 @@ import SignUp from './components/SignUp/SignUp';
 import {getAuth} from "firebase/auth";
 import app from './firebase.init';
 import RequireAuth from './RequireAuth/RequireAuth';
+import MyItem from './components/MyItem/MyItem';
 
 
 
@@ -36,6 +37,7 @@ function App() {
         <Route path='/inventoryitem' element={<InventoryItem></InventoryItem>}></Route>
         <Route path='/manageinventories' element={<ManageInventories></ManageInventories>}></Route>
         <Route path='/additem' element={<AddItem></AddItem>}></Route>
+        <Route path='/myitem' element={<MyItem></MyItem>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>

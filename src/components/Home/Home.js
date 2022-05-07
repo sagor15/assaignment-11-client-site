@@ -24,6 +24,11 @@ const Home = () => {
     }
 
 
+    
+    const handleManagebtn = ()=>{
+        navigate('/manageinventories');
+    }
+
     return (
         <div>
             <Banner></Banner>
@@ -54,7 +59,7 @@ const Home = () => {
 
 
             <div>
-            <button className='btn manage'>Manage inventories</button>
+            <button onClick={handleManagebtn} className='btn manage'>Manage inventories</button>
 
             </div>
             <About></About>

@@ -47,13 +47,7 @@ const Navber = () => {
                         <Nav className="me-auto">
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link as={Link} to="/inventoryitem">Inventory</Nav.Link>
-                           {
-                               user?.uid ?  <Nav.Link as={Link} to="/manageinventories">Manage Inventories</Nav.Link>:" "
-                               
-                           }
-                           {
-                               user?.uid?<Nav.Link as={Link} to="/additem">add item</Nav.Link>: " "
-                           }
+                          
                             
                              {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown"> */}
                                
@@ -64,7 +58,17 @@ const Navber = () => {
                         <Nav>
                             <Nav.Link href="#deets"> </Nav.Link>
                             {
-                                user?.uid? <Nav.Link onClick={handleSignOut} eventKey={2} as={Link} to="/login"> Sign Out </Nav.Link>:<Nav.Link eventKey={2} as={Link} to="/login"> Login </Nav.Link>
+                               user?.uid ?  <Nav.Link as={Link} to="/manageinventories">Manage Item</Nav.Link>:" "
+                               
+                           }
+                           {
+                               user?.uid?<Nav.Link as={Link} to="/additem">Add item</Nav.Link>: " "
+                           }
+                           {
+                               user?.uid? <Nav.Link as={Link} to="/myitem">My Item</Nav.Link>: " "
+                           }
+                            {
+                                user?.uid? <Nav.Link onClick={handleSignOut} eventKey={2} as={Link} to="/login"> <span className='text-danger'>Sign Out</span> </Nav.Link>:<Nav.Link eventKey={2} as={Link} to="/login"> Login </Nav.Link>
                                 
                           
                             }
