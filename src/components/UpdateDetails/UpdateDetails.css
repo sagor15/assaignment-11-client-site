@@ -1,3 +1,26 @@
 h1{
     color: white;
 }
+.updateImg{
+    width: 450px;
+}
+.updateContainer{
+    margin: 0 auto;
+    display: block;
+    width: 450px;
+    margin-top: 95px;
+
+}
+
+@media screen and (max-width:600px){
+    .updateImg{
+        width: 350px;
+    }
+    .updateContainer{
+        margin: 0 auto;
+        display: block;
+        width:  355px;
+        margin-top: 95px;
+        box-sizing: border-box;
+    }
+}

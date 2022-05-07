@@ -16,6 +16,7 @@ import {getAuth} from "firebase/auth";
 import app from './firebase.init';
 import RequireAuth from './RequireAuth/RequireAuth';
 import MyItem from './components/MyItem/MyItem';
+import Footer from './components/Footer/Footer';
 
 
 
@@ -43,7 +44,7 @@ function App() {
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>  
       
-      {/* <InventoryItem></InventoryItem> */}
+      <Footer></Footer>
     </div>
   );
 }

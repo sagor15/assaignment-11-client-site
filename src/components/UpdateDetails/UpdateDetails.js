@@ -91,17 +91,16 @@ const UpdateDetails = () => {
 
 
     return (
-        <div>
-
-
-            <img src={perIdDetails.picture} alt="" />
+        <div className='container'>
+            <div className='updateContainer'>
+            <img className='updateImg' src={perIdDetails.picture} alt="" />
             <h1>name : {perIdDetails.name}</h1>
             <h1>old Quantity : {perIdDetails.quantity}ps</h1>
             {/* <h1>new Quantity : {perIdDetails.makeQuantity}ps</h1> */}
             <h1>price :$ {perIdDetails.price}</h1>
             <button onClick={()=>handleDeliverdBtn()} className='btn'>Deliverd</button>
 
-            <form onSubmit={handleRestock}>
+            <form style={{marginTop:"20px"}} onSubmit={handleRestock}>
                 <input placeholder='update quantity' {...register("restock")} />
                 <input  value="Restock"  type="submit" />
             </form>
@@ -109,6 +108,9 @@ const UpdateDetails = () => {
             <button onClick={()=>handleManagebtn()} className='btn manage'>Manage inventories</button>
 
             </div>
+            </div>
+
+           
         </div>
     );
 };
