@@ -14,3 +14,28 @@
 .htwomanage{
     font-size: 18px;
 }
+
+
+@media screen and (max-width:600px) {
+    .manageitem{
+        display: flex;
+        flex-direction: column;
+        gap: 2;
+        background-color: white;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .manageImg{
+        width: 138px;
+        height: 147px;
+        border-radius: 50%;
+    }
+    .htwomanage{
+        font-size: 18px;
+    }
+    .btn{
+        margin-top: 5px;
+    }
+}
