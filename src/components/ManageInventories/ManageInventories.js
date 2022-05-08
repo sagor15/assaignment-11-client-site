@@ -16,7 +16,7 @@ const ManageInventories = () => {
     console.log(id);
     const proccedd = window.confirm('Are You Sure ? ');
     if(proccedd){
-      const url = `https://protected-headland-35009.herokuapp.com/service/${id}`;
+      const url = `https://protected-headland-35009.herokuapp.com/product/${id}`;
       fetch(url,{
         method:"DELETE",
       })
