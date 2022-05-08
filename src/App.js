@@ -14,7 +14,7 @@ import AddItem from './components/AddItem/AddItem';
 import SignUp from './components/SignUp/SignUp';
 import {getAuth} from "firebase/auth";
 import app from './firebase.init';
-import RequireAuth from './RequireAuth/RequireAuth';
+// import RequireAuth from './RequireAuth/RequireAuth';
 
 import Footer from './components/Footer/Footer';
 

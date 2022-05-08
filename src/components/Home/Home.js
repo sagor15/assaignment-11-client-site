@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import About from '../About/About';
 import Banner from '../Banner/Banner';
 import Fetures from '../Fetures/Fetures';
-import InventoryItem from '../InventoryItem/InventoryItem';
-import UpdateDetails from '../UpdateDetails/UpdateDetails';
+// import InventoryItem from '../InventoryItem/InventoryItem';
+// import UpdateDetails from '../UpdateDetails/UpdateDetails';
 import "./Home.css";
 
 const Home = () => {
@@ -28,6 +28,9 @@ const Home = () => {
     const handleManagebtn = ()=>{
         navigate('/manageinventories');
     }
+
+    
+
 
     return (
         <div>
