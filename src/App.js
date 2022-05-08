@@ -17,6 +17,7 @@ import app from './firebase.init';
 // import RequireAuth from './RequireAuth/RequireAuth';
 
 import Footer from './components/Footer/Footer';
+import Blog from './components/Blog/Blog';
 
 
 
@@ -35,6 +36,7 @@ function App() {
         <UpdateDetails></UpdateDetails>
          
         }></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/inventoryitem' element={<InventoryItem></InventoryItem>}></Route>
         <Route path='/manageinventories' element={<ManageInventories></ManageInventories>}></Route>
         <Route path='/additem' element={<AddItem></AddItem>}></Route>

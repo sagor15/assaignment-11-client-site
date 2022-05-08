@@ -1,6 +1,15 @@
 import React from 'react';
 import "./AddItem.css";
 import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
+
+
+
+
 const AddItem = () => {
 
 
@@ -19,6 +28,7 @@ const AddItem = () => {
     .then(res=> res.json())
     .then(result=>{
       console.log(result);
+      toast("New Item Added Successful");
     })
   };
 
@@ -33,6 +43,7 @@ const AddItem = () => {
         <input className='mb-4' placeholder='Photo Url'type="text" {...register("picture")} />
         <input type="submit" value="Add Item" />
       </form>
+      <ToastContainer />
     </div>
 
   );

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import "./ManageInventories.css"
+import "./ManageInventories.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ManageInventories = () => {
 
@@ -25,6 +27,7 @@ const ManageInventories = () => {
         console.log(data);
         const remaining = gymData.filter(gymDatas=>gymDatas._id !== id);
         setGymData(remaining);
+        toast('Delete successful');
       })
     }
   }
@@ -73,7 +76,7 @@ const ManageInventories = () => {
               }
             </div>
            
-          
+            <ToastContainer />
         </div>
 
 

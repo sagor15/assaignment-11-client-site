@@ -47,6 +47,7 @@ const Navber = () => {
                         <Nav className="me-auto">
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link as={Link} to="/inventoryitem">Inventory</Nav.Link>
+                            <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
                           
                             
                              {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown"> */}
